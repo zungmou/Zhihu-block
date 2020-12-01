@@ -117,20 +117,26 @@ class Cookie {
             $(`div.comment-app-holder div[class*='CommentItem_root'][aria-label='${user.name}的评论']`).hide()
 
             // https://www.zhihu.com/follow
-            $(`div.Card:has(div.AuthorInfo a.UserLink-link[href*='/people/${user.url}'])`).hide()
+            $(`div.Card div.List-item:has(div.AuthorInfo a.UserLink-link[href*='/people/${user.url}'])`).hide()
+            $(`div.Card div.List-item:has(div.AuthorInfo a.UserLink-link[href*='/org/${user.url}'])`).hide()
 
             // https://www.zhihu.com/topic
             $(`div.feed-item:has(div.AuthorInfo div.zm-item-answer-author-info[href*='/people/${user.id}'])`).hide()
             $(`div[class*='CommentItem_root']:has(a[href*='/people/${user.id}'])`).hide()
             $(`div[class*='CommentItem_root']:has(a[href*='/people/${user.url}'])`).hide()
+            $(`div.feed-item:has(div.AuthorInfo div.zm-item-answer-author-info[href*='/org/${user.id}'])`).hide()
+            $(`div[class*='CommentItem_root']:has(a[href*='/org/${user.id}'])`).hide()
+            $(`div[class*='CommentItem_root']:has(a[href*='/org/${user.url}'])`).hide()
 
             // Hide normal comment
             // https://www.zhihu.com/question/*
             $(`div.CommentItemV2:has(a.UserLink-link[href*='${user.id}'])`).hide()
             $(`div.CommentItemV2:has(a.UserLink-link[href*='/people/${user.url}'])`).hide()
+            $(`div.CommentItemV2:has(a.UserLink-link[href*='/org/${user.url}'])`).hide()
 
             $(`div.AnswerCard:has(div.AuthorInfo a.UserLink-link[href*='${user.id}'])`).hide()
             $(`div.AnswerCard:has(div.AuthorInfo a.UserLink-link[href*='/people/${user.url}'])`).hide()
+            $(`div.AnswerCard:has(div.AuthorInfo a.UserLink-link[href*='/org/${user.url}'])`).hide()
         })
     }
     /*
